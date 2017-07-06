@@ -1,0 +1,78 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Business name:</strong>
+  <%= @user.business_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= @user.password_digest %>
+</p>
+
+<p>
+  <strong>Street address:</strong>
+  <%= @user.street_address %>
+</p>
+
+<p>
+  <strong>Apartment:</strong>
+  <%= @user.apartment %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @user.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @user.state %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @user.zipcode %>
+</p>
+
+<p>
+  <strong>Account type:</strong>
+  <%= @user.account_type %>
+</p>
+
+<p>
+  <strong>Food category:</strong>
+  <%= @user.food_category %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+
+
+
+
+
+<!-- Business Accounts ONLY -->
+<!--
+<h1>Products</h1>
+
+
+<h1>Recent Trasactions</h1>
+
+
+<h1>Outstanding Orders</h1>
+
+
+<h1>Payment Ledger</h1>
+-->
