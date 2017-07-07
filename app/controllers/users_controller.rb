@@ -7,7 +7,10 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    # @users = User.all
+    @admin_users = User.where(account_type: 'Admin')
+    @customer_users = User.where(account_type: 'Customer')
+    @business_users = User.where(account_type: 'Business')
   end
 
   # GET /users/1
@@ -83,7 +86,7 @@ class UsersController < ApplicationController
     # only the current user and admin can access these actions
     def admin_and_current_user_access
       set_user
-      unless current_user == @user || current_user.account_type == 'Admin'
+      unless current_user?(@user) || user_admin?
         redirect_to root_url
         # enter flash notice here "You do not have permission to access this page"
       end
@@ -91,7 +94,7 @@ class UsersController < ApplicationController
 
     #
     def admin_only_access
-      unless current_user.account_type == 'Admin'
+      unless user_admin?
         redirect_to root_url
         # you do not have permission to access this page
       end

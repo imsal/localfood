@@ -16,9 +16,30 @@
 </p>
 
 <p>
-  <strong>Price:</strong>
-  <%= @product.price %>
+  <strong>Wholesale Price:</strong>
+  <%= @product.wholesale_price %>
 </p>
+
+<p>
+  <strong>Retail Price:</strong>
+  <%= @product.retail_price %>
+</p>
+
+<p>
+  <strong>Discount Percentage</strong>
+  <%= @product.discount_percentage %>
+</p>
+
+<p>
+  <strong>Discount Expiration Date:</strong>
+  <%= @product.discount_expiration_date %>
+</p>
+
+<p>
+  <strong>User ID Parent</strong>
+  <%= @product.user_id %>
+</p>
+
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

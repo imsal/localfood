@@ -52,18 +52,38 @@
           <b class="caret"></b>
         </a>
 
-        <!-- THIS DROPDOWN IS FOR BUSINESS' ONLY -->
+
         <ul class="dropdown-menu">
           <li><%= link_to 'Profile', user_path(current_user) %></li>
+            <!-- THIS DROPDOWN PORTION IS FOR BUSINESS' ONLY -->
           <li class="divider"></li>
           <li>
-            <a href="#">Products</a>
+            <a href="#">Product List</a>
           </li>
           <li>
             <a href="#">Outstanding Orders</a>
           </li>
           <li>
             <a href="#">Payment Ledger</a>
+          </li>
+          <!-- THIS DROPDOWN PORTION IS FOR ADMINS' ONLY -->
+          <li class="divider"></li>
+          <li>
+          <%= link_to 'Add Products', new_product_path %>
+          </li>
+          <li>
+          <%= link_to 'List All Products', products_path %>
+          </li>
+          <li>
+          <%= link_to 'List User Accounts', users_path %>
+          </li>
+          <!-- THIS DROPDOWN PORTION IS FOR CUSTOMERS' ONLY -->
+          <li class="divider"></li>
+          <li>
+          <%= link_to 'Order History', '#' %>
+          </li>
+          <li>
+          <%= link_to 'Track Shipments', '#' %>
           </li>
           <li class="divider"></li>
           <li><%= link_to 'Log out', logout_path, method: :delete %></li>

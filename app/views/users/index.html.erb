@@ -1,47 +1,56 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
-
-<table>
+<h1>Admin</h1>
+<table class="table">
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Business name</th>
-      <th>Email</th>
-      <th>Password digest</th>
-      <th>Street address</th>
-      <th>Apartment</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zipcode</th>
-      <th>Account type</th>
-      <th>Food category</th>
-      <th colspan="3"></th>
-    </tr>
+    <th>Name</th>
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.business_name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.password_digest %></td>
-        <td><%= user.street_address %></td>
-        <td><%= user.apartment %></td>
-        <td><%= user.city %></td>
-        <td><%= user.state %></td>
-        <td><%= user.zipcode %></td>
-        <td><%= user.account_type %></td>
-        <td><%= user.food_category %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+    <% @admin_users.each do |user| %>
+    <tr>
+      <td><%= link_to user.name, user_path(user) %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<h1>Business</h1>
+<table class="table">
+  <thead>
+    <th>Business Name</th>
+    <th>Food Category</th>
+    <th>Address</th>
+  </thead>
 
-<%= link_to 'New User', new_user_path %>
+  <tbody>
+    <% @business_users.each do |user| %>
+    <tr>
+      <td><%= link_to user.business_name, user_path(user) %></td>
+      <td><%= user.food_category %></td>
+      <td><%= user.street_address + ' ' + user.apartment + ' ' + user.city + ' ' + user.zipcode %></td>
+    </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Customers</h1>
+<table class="table">
+  <thead>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+  </thead>
+  <tbody>
+  <% @customer_users.each do |user| %>
+  <tr>
+    <td><%= link_to user.name, user_path(user) %></td>
+    <td><%= user.email %></td>
+    <td><%= user.phone_number %></td>
+  </tr>
+
+  <% end %>
+  </tbody>
+</table>

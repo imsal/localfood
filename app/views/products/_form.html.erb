@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :user_id %>
+    <%= form.select :user_id, options_from_collection_for_select(@options, "id", "business_name"), prompt: 'Select', id: :product_user_id %>
+  </div>
+
+  <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description, id: :product_description %>
   </div>
@@ -26,10 +31,25 @@
     <%= form.text_field :image, id: :product_image %>
   </div>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, id: :product_price %>
-  </div>
+<div class="field">
+  <%= form.label :wholesale_price %>
+  <%= form.text_field :wholesale_price, id: :product_wholesale_price %>
+</div>
+
+<div class="field">
+  <%= form.label :retail_price %>
+  <%= form.text_field :retail_price, id: :product_retail_price %>
+</div>
+
+<div class="field">
+  <%= form.label :discount_percentage %>
+  <%= form.text_field :discount_percentage, id: :product_discount_percentage %>
+</div>
+
+<div class="field">
+  <%= form.label :discount_expiration_date %>
+  <%= form.date_select :discount_expiration_date, :order => [:month, :day, :year], id: :product_discount_expiration_date %>
+</div>
 
   <div class="actions">
     <%= form.submit %>
