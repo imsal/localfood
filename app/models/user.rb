@@ -70,13 +70,19 @@ class User < ApplicationRecord
     "Wyoming" => 49
   }
 
+
+
   validates :state, inclusion: states.keys
   validates :account_type, presence: true, inclusion: account_types.keys
   validates :name, presence: true
   validates :phone_number, presence: true # validate format of phone number later
   validates :email, presence: true, format: { with: /.+@.+/}, uniqueness: {case_sensitive: false}
   # https://stackoverflow.com/questions/11992544/validating-password-using-regex
-  validates :password, presence: true, format: { with: /\A(?=.*[a-zA-Z])(?=.*[0-9]).{6,}\z/, message: 'Password must be at least 6 characters and include one number and one letter.' }, allow_nil: true
+
+  # password requirements: Password should contain atleast one integer, atleast one alphabet(either in downcase or upcase), Password can have special characters from 20 to 7E ascii values, Password should be minimum of 8 and maximum of 40 cahracters long
+  # https://ajaxonrails.wordpress.com/2006/10/19/using-regular-expression-in-ruby-on-rails-regex-for-password-validation/
+  validates :password, presence: true, format: { with: /\A(?=.*\d)(?=.*([a-z]|[A-Z]))([\x20-\x7E]){8,40}\z/, message: 'must be between 8 and 40 characters, contain at least one number and at least one letter' },
+  allow_nil: true
 
 
   def downcase_email
@@ -98,6 +104,13 @@ class User < ApplicationRecord
     if self.street_address != nil
       self.street_address = self.street_address.titleize
     end
+  end
+
+  # Returns the hash digest of the given string.
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+        BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
   end
 
 end
