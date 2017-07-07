@@ -8,6 +8,7 @@ class User < ApplicationRecord
   before_save :capitalize_name
   before_save :capitalize_business_name
   before_save :capitalize_street_address
+  before_save :format_phone_number
 
 
   #validations
@@ -75,7 +76,7 @@ class User < ApplicationRecord
   validates :state, inclusion: states.keys
   validates :account_type, presence: true, inclusion: account_types.keys
   validates :name, presence: true
-  validates :phone_number, presence: true # validate format of phone number later
+  validates :phone_number, presence: true # validate format of phone number later 661-904-5259 (ADD EXTENSION)
   validates :email, presence: true, format: { with: /.+@.+/}, uniqueness: {case_sensitive: false}
   # https://stackoverflow.com/questions/11992544/validating-password-using-regex
 
@@ -111,6 +112,10 @@ class User < ApplicationRecord
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
         BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
+  end
+
+  def format_phone_number
+    self.phone_number.gsub(/\D/, '')
   end
 
 end
