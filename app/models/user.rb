@@ -2,7 +2,7 @@ class User < ApplicationRecord
 
   has_many :products
 
-  has_secure_password
+  # has_secure_password
 
   before_save :downcase_email
   before_save :capitalize_name
@@ -107,12 +107,14 @@ class User < ApplicationRecord
     end
   end
 
+=begin
   # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
         BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
+=end
 
   def format_phone_number
     self.phone_number.gsub(/\D/, '')
