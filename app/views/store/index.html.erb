@@ -1,0 +1,8 @@
+<h1>Store</h1>
+<% @products.each do |product|  %>
+  <%= product.name %>
+  <%= product.description %>
+  <%= number_to_currency(product.retail_price) %>
+  <%= button_to 'Add to Cart', line_items_path(product_id: product.id), class: 'btn btn-primary' %> <!-- ,
+            remote: true  ///// Note: remote: true caused double SQL entries to be created while cart is empty. -->
+<% end %>

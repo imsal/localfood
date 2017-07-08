@@ -58,7 +58,10 @@
             <!-- THIS DROPDOWN PORTION IS FOR BUSINESS' ONLY -->
           <li class="divider"></li>
           <li>
-            <a href="#">Product List</a>
+            <b>Business'</b>
+          </li>
+          <li>
+            <%= link_to 'Product List', products_path %>
           </li>
           <li>
             <a href="#">Outstanding Orders</a>
@@ -69,6 +72,9 @@
           <!-- THIS DROPDOWN PORTION IS FOR ADMINS' ONLY -->
           <li class="divider"></li>
           <li>
+            <b>Admin's</b>
+          </li>
+          <li>
           <%= link_to 'Add Products', new_product_path %>
           </li>
           <li>
@@ -77,8 +83,14 @@
           <li>
           <%= link_to 'List User Accounts', users_path %>
           </li>
+          <li>
+          <%= link_to 'Unpaid Invoices', users_path %>
+          </li>
           <!-- THIS DROPDOWN PORTION IS FOR CUSTOMERS' ONLY -->
           <li class="divider"></li>
+          <li>
+            <b>Customer's</b>
+          </li>
           <li>
           <%= link_to 'Order History', '#' %>
           </li>
@@ -102,10 +114,10 @@
     </li>
 
     <li>
-      <a href="#">
+      <%= link_to cart_path(@cart) do %>
         $0.00
         <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-      </a>
+        <% end %>
     </li>
 
   </ul>

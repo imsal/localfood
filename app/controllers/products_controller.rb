@@ -5,7 +5,13 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    # if user == admin
     @products = Product.all
+    # if user == Business
+    # user.products
+
+    # if user == Customer
+    # redirect
   end
 
   # GET /products/1

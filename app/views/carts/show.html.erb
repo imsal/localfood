@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Your Shopping Cart</h1>
+
+<table class="table">
+<thead>
+  <th>Product Name</th>
+  <th>Quantity</th>
+  <th>Price</th>
+</thead>
+
+<tbody>
+
+<% @line_items.each do |line_item| %>
+<tr>
+<td><%= line_item.product.name %></td>
+<td><%= line_item.quantity %></td>
+<td><%= number_to_currency(line_item.product.retail_price * line_item.quantity) %> (<%= number_to_currency(line_item.product.retail_price) %>)</td>
+</tr>
+<% end %>
+
+<tr>
+  <td colspan="2"><!-- blank --></td>
+  <td><strong>Subtotal: <%= number_to_currency(@cart.total_price) %></strong></td>
+</tr>
+
+<tr>
+  <td colspan="2"><!-- blank --></td>
+  <td><strong>Shipping:</strong></td>
+</tr>
+
+<tr>
+  <td colspan="2"><!-- blank --></td>
+  <td><strong>Tax:</strong></td>
+</tr>
+
+<tr>
+  <td colspan="2"><!-- blank --></td>
+  <td><strong>Total:</strong></td>
+</tr>
+
+</tbody>
+</table>
+
+
+<%#= link_to 'Edit', edit_cart_path(@cart) %>
+<%#= link_to 'Back', carts_path %>
