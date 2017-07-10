@@ -1,9 +1,13 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :products
+         has_many :products
 
-  # has_secure_password
 
+=begin
   before_save :downcase_email
   before_save :capitalize_name
   before_save :capitalize_business_name
@@ -107,17 +111,18 @@ class User < ApplicationRecord
     end
   end
 
-=begin
+  =begin
   # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
         BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
-=end
+  =end
 
   def format_phone_number
     self.phone_number.gsub(/\D/, '')
   end
+=end
 
 end

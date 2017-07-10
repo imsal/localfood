@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
-  belongs_to :user
+  # belongs_to :user
+
 
   # enum user_id: user_business_hash
   #
@@ -18,6 +19,7 @@ class Product < ApplicationRecord
   #
   #   return hash
   # end
+
 
   has_many :line_items
   has_many :orders, through: :line_items

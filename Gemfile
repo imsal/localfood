@@ -72,5 +72,5 @@ gem 'autoprefixer-rails' # adds vendors prefixes to broswer specific transforms
 gem 'jquery-rails'
 gem 'stripe'
 gem 'dotenv-rails', :groups => [:development, :test]
-gem 'devise'
+gem 'devise', '~> 4.3.0'
 # gem 'rspec-rails'

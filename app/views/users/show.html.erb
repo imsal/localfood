@@ -1,59 +1,11 @@
-<p id="notice"><%= notice %></p>
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+Hi <%= @user.email %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
 
-<p>
-  <strong>Business name:</strong>
-  <%= @user.business_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
-
-<p>
-  <strong>Street address:</strong>
-  <%= @user.street_address %>
-</p>
-
-<p>
-  <strong>Apartment:</strong>
-  <%= @user.apartment %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @user.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @user.state %>
-</p>
-
-<p>
-  <strong>Zipcode:</strong>
-  <%= @user.zipcode %>
-</p>
-
-<p>
-  <strong>Account type:</strong>
-  <%= @user.account_type %>
-</p>
-
-<p>
-  <strong>Food category:</strong>
-  <%= @user.food_category %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<br/>
+<%= link_to 'Edit Profile', edit_user_registration_path, class: 'btn btn-primary' %>
+<%= link_to 'Change Password', '#', class: 'btn btn-primary' %>
+<%= link_to 'Change Subscription Frequency', '#', class: 'btn btn-default' %>
+<%= link_to 'Delete My Account', '#', class: 'btn btn-danger' %>
+<%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
