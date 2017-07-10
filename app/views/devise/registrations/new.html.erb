@@ -24,6 +24,20 @@
     <!-- :first_name, :last_name, :email, :password, :password_confirmation, :phone_number, :street_address, :suite, :city, :state, :zip_code, :business_name, :food_category, :notes -->
 
     <div class="field">
+      <%= f.label 'User Roles' %><br/>
+      <%= f.radio_button :role, 'super_admin', :checked => 'false' %>
+      <%= f.label :role, 'Super Admin' %>
+      <%= f.radio_button :role, 'admin', :checked => 'false' %>
+      <%= f.label :role, 'Admin' %>
+      <%= f.radio_button :role, 'business', :checked => 'false' %>
+      <%= f.label :role, 'Business' %>
+      <%= f.radio_button :role, 'customer', :checked => 'false' %>
+      <%= f.label :role, 'Customer' %>
+    </div>
+
+
+
+    <div class="field">
       <%= f.label :first_name %><br />
       <%= f.text_field :first_name, autocomplete: "on", class: 'form-control' %>
     </div>

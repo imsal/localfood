@@ -53,16 +53,14 @@
           <b class="caret"></b>
         </a>
 
-
+        <!-- START DROPDOWN MENU -->
         <ul class="dropdown-menu">
-          <li><%= link_to 'Profile', profile_path %></li> <!--  -->
-            <!-- THIS DROPDOWN PORTION IS FOR BUSINESS' ONLY -->
+          <li><%= link_to 'Profile', profile_path %></li>
+          <!-- START BUSINESS DROPDOWN -->
+          <% if current_user.business_role? %>
           <li class="divider"></li>
           <li>
-            <b>Business'</b>
-          </li>
-          <li>
-            <%= link_to 'Product List', products_path %>
+            <%= link_to 'View My Products', products_path %>
           </li>
           <li>
             <a href="#">Outstanding Orders</a>
@@ -70,46 +68,50 @@
           <li>
             <a href="#">Payment Ledger</a>
           </li>
-          <!-- THIS DROPDOWN PORTION IS FOR ADMINS' ONLY -->
+          <% end %>
+          <!-- END BUSINESS DROPDOWN -->
+
+          <!-- START ADMIN DROPDOWN -->
+          <% if current_user.admin_role? %>
           <li class="divider"></li>
           <li>
-            <b>Admin's</b>
+            <%= link_to 'Add Products', new_product_path %>
           </li>
           <li>
-          <%= link_to 'Add Products', new_product_path %>
+            <%= link_to 'List All Products', products_path %>
           </li>
           <li>
-          <%= link_to 'List All Products', products_path %>
+            <%= link_to 'List User Accounts', '#' %>
+            <!-- users_path -->
           </li>
           <li>
-          <%= link_to 'List User Accounts', '#' %> <!-- users_path -->
+            <%= link_to 'Unpaid Invoices', '#' %>
           </li>
-          <li>
-          <%= link_to 'Unpaid Invoices', '#' %>
-          </li>
-          <!-- THIS DROPDOWN PORTION IS FOR CUSTOMERS' ONLY -->
+          <% end %>
+          <!-- END ADMIN DROPDOWN -->
+
+          <!-- START CUSTOMER ROLE DROPDOWN -->
+          <% if current_user.customer_role? %>
           <li class="divider"></li>
 
           <li>
-            <b>Customer's</b>
-          </li>
-
-          <li>
-          <%= link_to 'Order History', '#' %>
+            <%= link_to 'Order History', '#' %>
           </li>
           <li>
-          <%= link_to 'Track Shipments', '#' %>
+            <%= link_to 'Track Shipments', '#' %>
           </li>
+          <% end %>
+          <!-- END CUSTOMER ROLE DROPDOWN -->
           <li class="divider"></li>
-          <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li> <!-- logout_path, method: :delete -->
+          <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+          <!-- logout_path, method: :delete -->
         </ul>
       </li>
-      <!-- ./dropdown -->
+      <!-- END DROPDOWN MENU -->
 
     <% else %>
 
       <%= link_to new_user_session_path do  %>
-
 
       <!-- Log in -->
       <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
@@ -120,9 +122,9 @@
 
     <li>
       <%= link_to cart_path(@cart) do %>
-        <%= number_to_currency(@cart.total_price) %>
-        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-        <% end %>
+      <%= number_to_currency(@cart.total_price) %>
+      <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+      <% end %>
     </li>
 
   </ul>

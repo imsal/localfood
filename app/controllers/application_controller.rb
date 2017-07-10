@@ -46,9 +46,9 @@ protected
 def configure_permitted_parameters
   # Permit the `subscribe_newsletter` parameter along with the other
   # sign up parameters. (:sign_up)
-  devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :phone_number, :street_address, :suite, :city, :state, :zip_code, :business_name, :food_category, :notes])
+  devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :phone_number, :street_address, :suite, :city, :state, :zip_code, :business_name, :food_category, :notes, :super_admin_role, :admin_role, :business_role, :customer_role])
   # account update parameters. (:account_update)
-  devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :phone_number, :street_address, :suite, :city, :state, :zip_code, :business_name, :food_category, :notes])
+  devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :phone_number, :street_address, :suite, :city, :state, :zip_code, :business_name, :food_category, :notes, :super_admin_role, :admin_role, :business_role, :customer_role])
 end
 
 end

@@ -6,9 +6,10 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     # if user == admin
-    @products = Product.all
+
     # if user == Business
     # user.products
+    @products = current_user.products
 
     # if user == Customer
     # redirect
@@ -80,7 +81,7 @@ class ProductsController < ApplicationController
     end
 
     def set_business_user
-      @options = User.where(account_type: 'Business')
+      @options = User.where(business_role: true)
     end
 
 end

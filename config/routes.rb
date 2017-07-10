@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users#, :controllers => { registrations: 'registrations' }
 
   get '/profile', to:'users#show', as: 'profile'
@@ -18,7 +20,8 @@ Rails.application.routes.draw do
   # get '/signup', to: 'users#new'
   # post '/signup', to: 'users#create'
 
-  resources :products
+  resources :products do
+    end
 
   root 'static_pages#landing_page'
 

@@ -70,7 +70,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails' # adds vendors prefixes to broswer specific transforms
 gem 'jquery-rails'
-gem 'stripe'
-gem 'dotenv-rails', :groups => [:development, :test]
-gem 'devise', '~> 4.3.0'
-# gem 'rspec-rails'
+gem 'stripe' # payment processing
+gem 'dotenv-rails', :groups => [:development, :test] # payment processing
+gem 'devise', '~> 4.3.0' # user signup / login / email processing
+gem 'remotipart', github: 'mshibuya/remotipart' # admin authentication
+gem 'rails_admin', '>= 1.0.0.rc' # admin authentication
+gem 'cancancan', '~> 1.10' # restricts access on specific pages
+gem "paperclip", "~> 5.0.0" # ability to add images
