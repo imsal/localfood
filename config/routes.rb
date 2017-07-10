@@ -1,24 +1,22 @@
 Rails.application.routes.draw do
 
-  # get 'charges/new'
-  #
-  # get 'charges/create'
+  devise_for :users#, :controllers => { registrations: 'registrations' }
+
+  get '/profile', to:'users#show', as: 'profile'
 
   resources :charges, only: [:new, :create]
   get 'thanks', to: 'charges#thanks', as: 'thanks'
-  # devise_for :users
 
   get 'store/index'
 
   resources :line_items
   resources :carts
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
-
-  get '/signup', to: 'users#new'
-  post '/signup', to: 'users#create'
-  resources :users
+  # get '/login', to: 'sessions#new'
+  # post '/login', to: 'sessions#create'
+  # delete '/logout', to: 'sessions#destroy'
+  #
+  # get '/signup', to: 'users#new'
+  # post '/signup', to: 'users#create'
 
   resources :products
 

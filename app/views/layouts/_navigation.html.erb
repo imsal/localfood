@@ -43,7 +43,8 @@
       </li>
       <!-- SEARCH BAR END -->
       <li>
-        <% if logged_in? %>
+        <%# if logged_in? %>
+        <% if user_signed_in? %>
 
       <li class="dropdown">
 
@@ -54,7 +55,7 @@
 
 
         <ul class="dropdown-menu">
-          <li><%= link_to 'Profile', user_path(current_user) %></li>
+          <li><%= link_to 'Profile', profile_path %></li> <!--  -->
             <!-- THIS DROPDOWN PORTION IS FOR BUSINESS' ONLY -->
           <li class="divider"></li>
           <li>
@@ -81,16 +82,18 @@
           <%= link_to 'List All Products', products_path %>
           </li>
           <li>
-          <%= link_to 'List User Accounts', users_path %>
+          <%= link_to 'List User Accounts', '#' %> <!-- users_path -->
           </li>
           <li>
-          <%= link_to 'Unpaid Invoices', users_path %>
+          <%= link_to 'Unpaid Invoices', '#' %>
           </li>
           <!-- THIS DROPDOWN PORTION IS FOR CUSTOMERS' ONLY -->
           <li class="divider"></li>
+
           <li>
             <b>Customer's</b>
           </li>
+
           <li>
           <%= link_to 'Order History', '#' %>
           </li>
@@ -98,14 +101,16 @@
           <%= link_to 'Track Shipments', '#' %>
           </li>
           <li class="divider"></li>
-          <li><%= link_to 'Log out', logout_path, method: :delete %></li>
+          <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li> <!-- logout_path, method: :delete -->
         </ul>
       </li>
       <!-- ./dropdown -->
 
     <% else %>
 
-      <%= link_to login_path do  %>
+      <%= link_to new_user_session_path do  %>
+
+
       <!-- Log in -->
       <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
       <% end %>
@@ -115,7 +120,7 @@
 
     <li>
       <%= link_to cart_path(@cart) do %>
-        $0.00
+        <%= number_to_currency(@cart.total_price) %>
         <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
         <% end %>
     </li>
