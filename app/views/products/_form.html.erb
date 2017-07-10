@@ -51,6 +51,11 @@
   <%= form.date_select :discount_expiration_date, :order => [:month, :day, :year], id: :product_discount_expiration_date %>
 </div>
 
+<div class="field">
+  <%= form.label :image_file %>
+  <%= form.file_field :image_file, id: :product_image_file %>
+</div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%= image_tag(@product.image_file.url(:large)) %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @product.name %>
 </p>
@@ -42,11 +46,7 @@
 
 <br/>
 
-<%= form_for Image.new, url: new_product_image_path, html: { multipart: true } do |f| %>
-  <%= f.file_field :image_file %>
-  <%= f.submit %>
 
-<% end %>
 
 
 <%= link_to 'Edit', edit_product_path(@product) %> |

@@ -3,6 +3,7 @@
 <h1>My Products For Sale</h1>
 
 <% @products.each do |product| %>
+<%= image_tag(product.image_file.url(:medium)) %>
 <%= link_to product.name, product_path(product) %>
 <%= product.retail_price %><br/>
 <% end %>

@@ -20,8 +20,7 @@ Rails.application.routes.draw do
   # get '/signup', to: 'users#new'
   # post '/signup', to: 'users#create'
 
-  resources :products do
-    end
+  resources :products
 
   root 'static_pages#landing_page'
 

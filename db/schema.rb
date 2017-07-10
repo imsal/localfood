@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170710195339) do
+ActiveRecord::Schema.define(version: 20170710231948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(version: 20170710195339) do
     t.decimal "discount_percentage", precision: 2, scale: 2
     t.datetime "discount_expiration_date"
     t.bigint "user_id"
+    t.string "image_file_file_name"
+    t.string "image_file_content_type"
+    t.integer "image_file_file_size"
+    t.datetime "image_file_updated_at"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
