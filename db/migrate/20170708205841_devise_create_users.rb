@@ -1,6 +1,6 @@
 class DeviseCreateUsers < ActiveRecord::Migration[5.1]
   def change
-    execute "DROP TABLE #{:users} CASCADE"
+    # execute "DROP TABLE #{:users} CASCADE"
 
     create_table :users do |t|
       ## Database authenticatable
