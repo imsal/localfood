@@ -11,7 +11,7 @@
     </button>
 
   </div>
-  <%= link_to 'LOCAL FOODS', root_url, class: 'navbar-brand' %>
+  <%= link_to 'SHIPFOODTO.ME', root_url, class: 'navbar-brand' %>
   <!-- <a class="navbar-brand" href="#">LOCAL FOODS</a> -->
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="navbar-collapse-1">
@@ -21,13 +21,20 @@
         <a href="#">LOCALLY</a>
       </li>
       <li>
-        <a href="#">BY POPULAR CITIES</a>
+        <%= link_to 'BY POPULAR CITIES', popular_cities_path %>
       </li>
       <li>
         <a href="#">BY FOOD TYPE</a>
       </li>
+      <li>
+        <a href="#">RANDOMIZE</a>
+      </li>
+
     </ul>
     <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#">CATERING &amp GIFT BASKETS</a>
+      </li>
       <!-- SEARCH BAR START -->
       <li>
         <form class="navbar-form" role="search">

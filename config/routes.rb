@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :products
 
   root 'static_pages#landing_page'
+  get '/popular_cities', to: 'static_pages#popular_cities'#, as: 'popular_cities'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
