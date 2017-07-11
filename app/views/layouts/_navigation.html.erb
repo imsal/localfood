@@ -1,5 +1,9 @@
 <!-- https://www.bootply.com/mQh8DyRfWY -->
 
+<div class='row'>
+
+
+
 <nav class="navbar navbar-default" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
@@ -11,8 +15,18 @@
     </button>
 
   </div>
-  <%= link_to 'SHIPFOODTO.ME', root_url, class: 'navbar-brand' %>
-  <!-- <a class="navbar-brand" href="#">LOCAL FOODS</a> -->
+
+
+
+
+
+  <!-- NAVBAR BRAND (TEMPORARY COMMENTING) -->
+  <%#= link_to 'SHIPFOODTO.ME', root_url, class: 'navbar-brand' %>
+
+
+
+
+
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="navbar-collapse-1">
 
@@ -29,11 +43,15 @@
       <li>
         <a href="#">RANDOMIZE</a>
       </li>
+      <li>
+        <a href="#">BY FLAVOR</a>
+        <!-- TANGY, SWEET, SPICY -->
+      </li>
 
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>
-        <a href="#">CATERING &amp GIFT BASKETS</a>
+        <a href="#">CATERING &amp; GIFT BASKETS</a>
       </li>
       <!-- SEARCH BAR START -->
       <li>
@@ -50,7 +68,6 @@
       </li>
       <!-- SEARCH BAR END -->
       <li>
-        <%# if logged_in? %>
         <% if user_signed_in? %>
 
       <li class="dropdown">
@@ -111,16 +128,14 @@
           <!-- END CUSTOMER ROLE DROPDOWN -->
           <li class="divider"></li>
           <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
-          <!-- logout_path, method: :delete -->
         </ul>
       </li>
       <!-- END DROPDOWN MENU -->
 
     <% else %>
 
-      <%= link_to new_user_session_path do  %>
-
       <!-- Log in -->
+      <%= link_to new_user_session_path do  %>
       <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
       <% end %>
 
@@ -138,3 +153,8 @@
 </div>
 <!-- /.navbar-collapse -->
 </nav>
+
+
+
+
+</div><!-- ./row -->

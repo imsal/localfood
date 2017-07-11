@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    @user_role_type = display_user_role_type
   end
 
   def create
@@ -30,6 +31,20 @@ class UsersController < ApplicationController
       params[:user][:business] = false
     end
     User.new(params[:user])
+  end
+
+  private
+
+  def display_user_role_type
+    if @user.super_admin_role?
+      'Super Admin'
+    elsif @user.admin_role?
+      'Admin'
+    elsif @user.business_role?
+      'Business'
+    elsif @user.customer_role?
+      'Customer'
+    end
   end
 
 end

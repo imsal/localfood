@@ -9,8 +9,23 @@
   </head>
 
   <body>
+    
+    <div class="container-fluid">
+      <div class="row">
+      <div class="title-header">
+        <%= link_to 'shipfoodtoME', root_url, class: 'center-block text-center logo' %>
+        <%= render 'layouts/social-media-row' %>
+      </div>
+    </div><!-- ./row -->
+
+
+
+
+    <!-- <h1 class="main-title text-center">shipfoodto.me</h1> -->
+
+
     <%= render 'layouts/navigation' %>
-    <%= render 'layouts/social-media-row' %>
+
 
     <!--<p class="notice"><%#= notice %></p>
     <p class="alert"><%#= alert %></p>-->
@@ -26,6 +41,9 @@
 
 
     <%= yield %>
+
+
+    </div><!-- ./container-fluid -->
 
 
   </body>

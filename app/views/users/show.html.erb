@@ -1,6 +1,13 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-Hi <%= @user.email %>
+<h1>Profile</h1>
+
+<strong>Email:</strong> <%= @user.email %><br/>
+<strong>Business Name:</strong> <%= @user.business_name %><br/>
+<strong>Food Category:</strong> <%= @user.food_category %><br/>
+<strong>Account Type:</strong> <%= @user_role_type %><br/>
+<strong>Name:</strong> <%= @user.first_name %> <%= @user.last_name %><br/>
+<strong>Phone Number:</strong> <%= @user.phone_number %><br/>
+<strong>Address:</strong> <%= @user.street_address %><%= @user.suite %><br/>
+&nbsp;&nbsp;&nbsp; <%= @user.city %> <%= @user.state %>, <%= @user.zip_code %><br/>
 
 
 <br/>

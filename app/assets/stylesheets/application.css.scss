@@ -17,7 +17,33 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ // custom font's
+ @import "fonts";
+ $aileron_light: 'Aileron-Light';
+
+ .title-header {
+   background-color: #f49b42;
+   margin: 0;
+   padding-bottom: 25px;
+
+   .logo {
+     font-family: $aileron_light;
+     font-size: 12rem;
+    // font-size: 9em;
+     color: #FFFFFF;
+   }
+
+   .logo:hover {
+     text-decoration: none;
+   }
+ }
+
+
+
 // resets
+html {
+  font-size: 16px;
+}
 
 html, body
 {
@@ -45,20 +71,33 @@ html, body
 
  // social media links
  #social-media-links {
-  //  background-color: gray;
-  //  width: 30%;
-   border: 1px solid black;
+   img {
+     width: 3.5%;
+     height: 3.5%;
+   }
+
  }
 
-// jumbotron
-.vertical-center {
-  min-height: 70vh;
-  // min-height: 100%;
-  display: flex;
-  align-items: center;
+// landing page
 
-  img {
-    margin-top: -5vh;
+.landing-page-background {
+background-image: url('doughnut-bg');
+background-size: cover;
+background-position: right;
+width: 100%;
+height: 60vh;
+text-align: center;
+overflow: hidden;
+
+  span {
+     display: block;
+     position: relative;
+     top: 50%;
+     transform: translateY(-50%);
+     h3 {
+       color: white;
+     }
   }
+
 
 }
