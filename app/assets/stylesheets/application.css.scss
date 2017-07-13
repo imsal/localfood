@@ -12,23 +12,25 @@
  *
  *= require_tree .
  *= require_self
+ //= require kube.min
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+
+
 
  // custom font's
  @import "fonts";
  $aileron_light: 'Aileron-Light';
 
- // SASS Vars
+ // mixins and variables
+ @import "kube";
 $orange-bg: #f49b42;
 $white: #FFFFFF;
 
-
  // general text sizing
  html {
-   font-size: 16px;
+   // set root base font-size
+  //  font-size: 16px;
  }
 
  body {
@@ -39,56 +41,43 @@ $white: #FFFFFF;
 
 html, body
 {
-  margin: 0 !important;
-  padding: 0 !important;
+  // margin: 0 !important;
+  // padding: 0 !important;
   overflow-x: hidden;
 }
 
-// logo
+.message {
+margin-bottom: 0 !important;
+}
 
- .title-header {
+a:link, a:visited, a:hover, a:active { text-decoration:  none; }
+
+// navigation bar
+
+ .navigation-bar {
    background-color: $orange-bg;
-   margin: 0;
-   padding-bottom: 25px;
+}
 
-   .logo {
-     font-family: $aileron_light;
-     font-size: 12rem;
-     color: #FFFFFF;
-   }
+.nav-logo {
 
-   .logo:hover {
-     text-decoration: none;
-   }
- }
+}
 
+.center-parent {
+  text-align: center;
+}
 
-// navigation bar styling
- .navbar-brand {
-     position: absolute;
-     width: 100%;
-     left: 0;
-     top: 0;
-     text-align: center;
-     margin: auto;
- }
- .navbar-toggle {
-     z-index:3;
- }
+.center-child {
+  margin: auto;
+}
 
- .navbar {
-   padding-bottom: 0;
-   margin-bottom: 0;
- }
+  //  .logo {
+  //    font-family: $aileron_light;
+  //    color: #FFFFFF;
+  //  }
 
- // social media links
- #social-media-links {
-   img {
-     width: 3.5%;
-     height: 3.5%;
-   }
-
- }
+  .transparent-search {
+    // background-color: transparent;
+  }
 
 // landing page background
 
@@ -115,7 +104,7 @@ overflow: hidden;
 
 // Popular City Links
 .popular-city-link {
-  font-size: 1.65rem;
+  // font-size: 1.65rem;
 }
 
 

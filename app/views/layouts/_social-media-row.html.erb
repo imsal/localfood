@@ -1,13 +1,24 @@
 
-<!-- https://blog.bufferapp.com/social-media-icons -->
-  <!-- <div class="row"> -->
-    <div id="social-media-links" class="center-block text-center">
-      <%= link_to (image_tag asset_url('iconmonstr-facebook.svg')), '#' %>
-      <%= link_to (image_tag asset_url('iconmonstr-instagram.svg')), 'https://www.instagram.com/shipfoodto.me/', target: '_blank' %>
-      <%= link_to (image_tag asset_url('iconmonstr-linkedin.svg')), '#' %>
-      <%= link_to (image_tag asset_url('iconmonstr-pinterest.svg')), '#' %>
-      <%= link_to (image_tag asset_url('iconmonstr-tumblr.svg')), '#' %>
-      <%= link_to (image_tag asset_url('iconmonstr-twitter.svg')), '#' %>
-    </div>
+    <!-- <div class="social-media-links"> -->
+    <div class="row text-center">
+      <div class="col col-2">
+        <%= link_to (image_tag asset_url('iconmonstr-facebook.svg')), '#', class: 'social-media-link' %>
+      </div>
+      <div class="col col-2">
+        <%= link_to (image_tag asset_url('iconmonstr-instagram.svg')), 'https://www.instagram.com/shipfoodto.me/', class: 'social-media-link', target: '_blank' %>
+      </div>
+      <div class="col col-2">
+        <%= link_to (image_tag asset_url('iconmonstr-linkedin.svg')), '#', class: 'social-media-link' %>
+      </div>
+      <div class="col col-2">
+        <%= link_to (image_tag asset_url('iconmonstr-pinterest.svg')), '#', class: 'social-media-link' %>
+      </div>
+      <div class="col col-2">
+        <%= link_to (image_tag asset_url('iconmonstr-tumblr.svg')), '#', class: 'social-media-link' %>
+      </div>
+      <div class="col col-2">
+        <%= link_to (image_tag asset_url('iconmonstr-twitter.svg')), '#', class: 'social-media-link' %>
+      </div>
+    </div><!-- ./row -->
 
-  <!-- </div> -->
+    <!-- </div> -->

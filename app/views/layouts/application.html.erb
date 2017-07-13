@@ -9,23 +9,9 @@
   </head>
 
   <body>
-    
-    <div class="container-fluid">
-      <div class="row">
-      <div class="title-header">
-        <%= link_to 'shipfoodtoME', root_url, class: 'center-block text-center logo' %>
-        <%= render 'layouts/social-media-row' %>
-      </div>
-    </div><!-- ./row -->
 
 
-
-
-    <!-- <h1 class="main-title text-center">shipfoodto.me</h1> -->
-
-
-    <%= render 'layouts/navigation' %>
-
+<%= render 'layouts/navigation_bar' %>
 
     <!--<p class="notice"><%#= notice %></p>
     <p class="alert"><%#= alert %></p>-->
@@ -33,17 +19,16 @@
 
 
   <% flash.each do |message_type, message| %>
-  <div class="alert alert-<%= message_type %> alert-dismissable">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <%= message %>
-  </div>
+  <div class="message <%= message_type %>" data-component="message"> <%= message %>  <span class="close small"></span> </div>
   <% end %>
 
 
     <%= yield %>
 
 
-    </div><!-- ./container-fluid -->
+    <%= render 'layouts/footer' %>
+
+
 
 
   </body>

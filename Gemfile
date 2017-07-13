@@ -67,7 +67,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 ## Custom Gems Added
-gem 'bootstrap-sass'
 gem 'autoprefixer-rails' # adds vendors prefixes to broswer specific transforms
 gem 'jquery-rails'
 gem 'stripe' # payment processing
