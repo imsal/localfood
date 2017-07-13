@@ -1,0 +1,20 @@
+<!-- http://www.washingtonpost.com/sf/style/2015/12/21/the-10-best-food-cities-in-america-ranked/?utm_term=.4498704ffc09 -->
+
+<h1 class='text-center'>Top Cities For Food</h1>
+
+
+<% @popular_cities.each do |city, state| %>
+
+  <% if @popular_cities_count % 2 == 0 %>
+  <div class="row">
+  <% end %>
+
+  <%= link_to "#{city}, #{state}", '#' %>
+
+  <% if @popular_cities_count % 2 == 0 %>
+  </div>
+  <% end %>
+
+  <% @popular_cities_count += 1 %>
+
+<% end %>

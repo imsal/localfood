@@ -21,8 +21,29 @@
  @import "fonts";
  $aileron_light: 'Aileron-Light';
 
+ // SASS Vars
+$orange-bg: #f49b42;
+$white: #FFFFFF;
+
+
+ // general text sizing
+ html {
+   font-size: 16px;
+ }
+
+// resets
+
+html, body
+{
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+}
+
+// logo
+
  .title-header {
-   background-color: #f49b42;
+   background-color: $orange-bg;
    margin: 0;
    padding-bottom: 25px;
 
@@ -38,18 +59,6 @@
    }
  }
 
-
-
-// resets
-html {
-  font-size: 16px;
-}
-
-html, body
-{
-  margin: 0 !important;
-  padding: 0 !important;
-}
 
 // navigation bar styling
  .navbar-brand {
@@ -78,7 +87,7 @@ html, body
 
  }
 
-// landing page
+// landing page background
 
 .landing-page-background {
 background-image: asset_url('doughnut-bg');
@@ -95,9 +104,43 @@ overflow: hidden;
      top: 50%;
      transform: translateY(-50%);
      h3 {
-       color: white;
+       color: $white;
      }
   }
+}
 
 
+// Popular City Links
+.popular-city-link {
+  font-size: 1.65rem;
+}
+
+
+.popular-city-link:nth-child(odd) {
+    color: blue;
+  }
+
+.popular-city-link:nth-child(even) {
+    color: red;
+  }
+// .popular-city-link:nth-child(even)::after {
+//   content:
+// }
+
+
+// By Flavor
+
+
+.table-of-images {
+  tr {
+    width: 100%;
+    td {
+      width: 30%;
+      img {
+        width: 100%;
+        height: auto;
+
+      }
+    }
+  }
 }
