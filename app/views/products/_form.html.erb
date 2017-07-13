@@ -17,8 +17,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.select :user_id, options_from_collection_for_select(@options, "id", "business_name"), prompt: 'Select', id: :product_user_id %>
+    <%= form.label :user_id, 'Business' %>
+    <%= form.select :user_id, options_from_collection_for_select(User.where(business_role: true), :id, :business_name), prompt: 'Select', id: :product_user_id %>
   </div>
 
   <div class="field">
@@ -48,12 +48,60 @@
 
 <div class="field">
   <%= form.label :discount_expiration_date %>
+  <%#= form.check_box :discount_expiration_date, value: nil %>
   <%= form.date_select :discount_expiration_date, :order => [:month, :day, :year], id: :product_discount_expiration_date %>
 </div>
 
 <div class="field">
   <%= form.label :image_file %>
   <%= form.file_field :image_file, id: :product_image_file %>
+</div>
+
+<!-- ADD ATTRIBUTES OF THE BELOW -->
+<div class="field">
+  <%= form.label 'Typical Shelf Life' %>
+</div>
+
+<div class="field">
+  <%= form.label 'Max Number of Days Product Can Survive Transit' %>
+</div>
+
+<div class="field">
+  <%= form.label 'Minimum Number of Quantity per Purchase' %>
+</div>
+
+<div class="field">
+  <%= form.label 'Maximum Number of Quantity per Purchase' %>
+</div>
+
+<div class="field">
+  <%= form.label 'Packaging Information' %>
+</div>
+
+<div class="field">
+  <%= form.label 'Federal / State Shipping Laws' %>
+</div>
+
+<!-- Filtering Info -->
+
+<div class="field">
+  <%= form.label 'Cold / Hot / Frozen / Room Temp' %>
+</div>
+
+<div class="field">
+  <%= form.label 'Flavor Tags' %>
+</div>
+
+<div class="field">
+  <%= form.label 'Food Type' %>
+</div>
+
+<div class="field">
+  <%= form.label 'ID / Model Name' %>
+</div>
+
+<div class="field">
+  <%= form.label 'product slug?' %>
 </div>
 
   <div class="actions">

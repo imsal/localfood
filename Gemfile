@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+# gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -72,6 +72,7 @@ gem 'autoprefixer-rails' # adds vendors prefixes to broswer specific transforms
 gem 'jquery-rails'
 gem 'stripe' # payment processing
 gem 'dotenv-rails', :groups => [:development, :test] # payment processing
+
 gem 'devise', '~> 4.3.0' # user signup / login / email processing
 gem 'remotipart', github: 'mshibuya/remotipart' # admin authentication
 gem 'rails_admin', '>= 1.0.0.rc' # admin authentication
