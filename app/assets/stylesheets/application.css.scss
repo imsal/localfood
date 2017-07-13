@@ -14,53 +14,46 @@
  *= require_self
  //= require kube.min
  */
-
-
-
-
- // custom font's
- @import "fonts";
- $aileron_light: 'Aileron-Light';
-
- // mixins and variables
- @import "kube";
+// custom font's
+@import "fonts";
+$aileron_light: 'Aileron-Light';
+// mixins and variables
+@import "kube";
 $orange-bg: #f49b42;
 $white: #FFFFFF;
-
- // general text sizing
- html {
-   // set root base font-size
+// general text sizing
+html {
+  // set root base font-size
   //  font-size: 16px;
- }
+}
 
- body {
-   min-height: 100vh;
- }
-
+body {
+  min-height: 100vh;
+}
 // resets
-
-html, body
-{
+body,
+html {
   // margin: 0 !important;
   // padding: 0 !important;
   overflow-x: hidden;
 }
 
 .message {
-margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
-a:link, a:visited, a:hover, a:active { text-decoration:  none; }
-
+a:active,
+a:hover,
+a:link,
+a:visited {
+  text-decoration: none;
+}
 // navigation bar
-
- .navigation-bar {
-   background-color: $orange-bg;
+.navigation-bar {
+  background-color: $orange-bg;
 }
 
-.nav-logo {
-
-}
+.nav-logo {}
 
 .center-parent {
   text-align: center;
@@ -69,70 +62,77 @@ a:link, a:visited, a:hover, a:active { text-decoration:  none; }
 .center-child {
   margin: auto;
 }
-
-  //  .logo {
-  //    font-family: $aileron_light;
-  //    color: #FFFFFF;
-  //  }
-
-  .transparent-search {
-    // background-color: transparent;
-  }
-
+//  .logo {
+//    font-family: $aileron_light;
+//    color: #FFFFFF;
+//  }
+.transparent-search {
+  // background-color: transparent;
+}
 // landing page background
-
 .landing-page-background {
-background-image: asset_url('doughnut-bg');
-background-size: cover;
-background-position: right;
-width: 100%;
-height: 60vh;
-text-align: center;
-overflow: hidden;
+  background-image: asset_url('doughnut-bg.jpg');
+  background-size: cover;
+  background-position: right;
+  width: 100%;
+  height: 60vh;
+  text-align: center;
+  overflow: hidden;
 
   span {
-     display: block;
-     position: relative;
-     top: 50%;
-     transform: translateY(-50%);
-     h3 {
-       color: $white;
-     }
-  }
-}
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 
-
-// Popular City Links
-.popular-city-link {
-  // font-size: 1.65rem;
-}
-
-
-.popular-city-link:nth-child(odd) {
-    color: blue;
-  }
-
-.popular-city-link:nth-child(even) {
-    color: red;
-  }
-// .popular-city-link:nth-child(even)::after {
-//   content:
-// }
-
-
-// By Flavor
-
-
-.table-of-images {
-  tr {
-    width: 100%;
-    td {
-      width: 30%;
-      img {
-        width: 100%;
-        height: auto;
-
-      }
+    h3 {
+      color: $white;
     }
   }
 }
+// Popular City Links
+
+.popular-cities{
+  -moz-column-count: 2;
+  -moz-column-gap: 2.5em;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 2.5em;
+   column-count: 2;
+   column-gap: 2.5em;
+}
+
+// flavors
+
+.image-flavor-background{
+  background-size: cover;
+  background-position: right;
+  width: 100%;
+  height: 40vh;
+  text-align: center;
+  // overflow: hidden;
+  // display: inline-block;
+
+  span {
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+    h3 {
+      color: $white;
+    }
+  }
+}
+
+
+  #sweet {
+    background-image: asset_url('sweet.jpg');
+  }
+
+  #spicy {
+    background-image: asset_url('spicy.jpg');
+  }
+
+  #salty {
+    background-image: asset_url('salty.jpg');
+  }

@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
   end
 
   def popular_cities
-    @popular_cities_count = 0
+    # @popular_cities_count = 0
 
     @popular_cities = {
     'Charleston' => 'South Carolina',
