@@ -8,15 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-
-
-<%= render 'layouts/navigation_bar' %>
-
-
-    <!--<p class="notice"><%#= notice %></p>
-    <p class="alert"><%#= alert %></p>-->
-
+  <body class="orange-background-color">
 
 
   <% flash.each do |message_type, message| %>
@@ -25,12 +17,6 @@
 
 
     <%= yield %>
-
-    <%= debug(params) if Rails.env.development? %>
-
-
-    <%= render 'layouts/footer' %>
-
 
 
 

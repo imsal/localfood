@@ -1,18 +1,49 @@
 <h1>Profile</h1>
 
 <strong>Email:</strong> <%= @user.email %><br/>
+
+<% if current_user.business_role? %>
 <strong>Business Name:</strong> <%= @user.business_name %><br/>
 <strong>Food Category:</strong> <%= @user.food_category %><br/>
+<% end %>
+
 <strong>Account Type:</strong> <%= @user_role_type %><br/>
 <strong>Name:</strong> <%= @user.first_name %> <%= @user.last_name %><br/>
 <strong>Phone Number:</strong> <%= @user.phone_number %><br/>
+
 <strong>Address:</strong> <%= @user.street_address %><%= @user.suite %><br/>
 &nbsp;&nbsp;&nbsp; <%= @user.city %> <%= @user.state %>, <%= @user.zip_code %><br/>
 
 
-<br/>
-<%= link_to 'Edit Profile', edit_user_registration_path, class: 'btn btn-primary' %>
-<%= link_to 'Change Password', '#', class: 'btn btn-primary' %>
-<%= link_to 'Change Subscription Frequency', '#', class: 'btn btn-default' %>
+
+
+<!-- links based on role -->
+<% if current_user.business_role? %>
+<%= link_to 'View My Products', products_path %>
+<%= link_to 'Outstanding Orders', '#' %>
+<%= link_to 'Payment Ledger', '#' %>
+<% end %>
+
+<% if current_user.admin_role? %>
+<%= link_to 'Admin Dashboard', '#' %>
+<%= link_to 'Add Products', new_product_path %>
+<%= link_to 'List All Products', products_path %>
+<%= link_to 'List User Accounts', '#' %>
+<%= link_to 'Unpaid Invoices', '#' %>
+<%= link_to 'Payment Ledgers', '#' %>
+<% end %>
+
+<% if current_user.customer_role? %>
+<%= link_to 'Order History', '#' %>
+<%= link_to 'Track Shipments', '#' %>
 <%= link_to 'Delete My Account', '#', class: 'btn btn-danger' %>
-<%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
+<%= link_to 'Change Subscription Frequency', '#', class: 'btn btn-default' %>
+<% end %>
+
+
+<!-- General Links -->
+<%= link_to 'Edit Profile', edit_user_registration_path, class: 'btn btn-primary' %>
+
+<%= link_to destroy_user_session_path, method: :delete do %>
+<button class="button secondary">Log out</button>
+<% end %>

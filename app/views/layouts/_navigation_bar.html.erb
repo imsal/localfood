@@ -1,4 +1,4 @@
-<div class="row navigation-bar align-middle around" data-component="sticky">
+<div class="row orange-background-color align-middle around" data-component="sticky">
 
   <div class="col col-6">
     <div class="row align-miggle">
@@ -27,10 +27,13 @@
       <div class="col col-3 center-parent">
         <!-- login -->
         <% if user_signed_in? %>
+
         <%#= render 'layouts/signed_in_nav' %>
-        <%= link_to destroy_user_session_path, method: :delete do %>
-        <button class="button secondary w80 center-child">Log out</button>
+        <%= link_to profile_path do %>
+        <button class="button secondary w80 center-child">Profile</button>
         <% end %>
+
+
       <% else %>
         <%= link_to new_user_session_path do %>
         <button class="button secondary w80 center-child">Log in</button>

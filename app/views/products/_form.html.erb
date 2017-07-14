@@ -59,49 +59,65 @@
 
 <!-- ADD ATTRIBUTES OF THE BELOW -->
 <div class="field">
-  <%= form.label 'Typical Shelf Life' %>
+  <%= form.label :temperature_requirements %>
+  <%= form.text_field :temperature_requirements, id: :product_temperature_requirements %>
+</div>
+
+<div class="field"><!-- integer / in days -->
+  <%= form.label :shelf_life %>
+  <%= form.text_field :shelf_life, id: :product_shelf_life %>
 </div>
 
 <div class="field">
-  <%= form.label 'Max Number of Days Product Can Survive Transit' %>
+  <%= form.label :max_hours_of_survival_in_transit %>
+  <%= form.text_field :max_hours_of_survival_in_transit, id: :product_max_hours_of_survival_in_transit %>
 </div>
 
 <div class="field">
-  <%= form.label 'Minimum Number of Quantity per Purchase' %>
+  <%= form.label :min_num_of_qty_per_purchase %>
+  <%= form.text_field :min_num_of_qty_per_purchase, id: :product_min_num_of_qty_per_purchase %>
 </div>
 
 <div class="field">
-  <%= form.label 'Maximum Number of Quantity per Purchase' %>
+  <%= form.label :max_num_of_qty_per_purchase %>
+  <%= form.text_field :max_num_of_qty_per_purchase, id: :product_max_num_of_qty_per_purchase %>
 </div>
 
 <div class="field">
-  <%= form.label 'Packaging Information' %>
+  <%= form.label :packaging_requirements %>
+  <%= form.text_field :xx, id: :product_ %>
 </div>
 
 <div class="field">
-  <%= form.label 'Federal / State Shipping Laws' %>
+  <%= form.label :federal_and_state_shipping_laws %>
+  <%= form.text_field :federal_and_state_shipping_laws, id: :product_federal_and_state_shipping_laws %>
 </div>
 
 <!-- Filtering Info -->
 
 <div class="field">
-  <%= form.label 'Cold / Hot / Frozen / Room Temp' %>
+  <%= form.label :frozen_cold_room_temp_or_hot %>
+  <%= form.text_field :frozen_cold_room_temp_or_hot, id: :product_frozen_cold_room_temp_or_hot %>
 </div>
 
 <div class="field">
-  <%= form.label 'Flavor Tags' %>
+  <%= form.label :flavor_tags %>
+  <%= form.text_field :flavor_tags, id: :product_flavor_tags %>
 </div>
 
 <div class="field">
-  <%= form.label 'Food Type' %>
+  <%= form.label :food_type_tags %>
+  <%= form.text_field :food_type_tags, id: :product_food_type_tags %>
 </div>
 
 <div class="field">
-  <%= form.label 'ID / Model Name' %>
+  <%= form.label :external_model_number %>
+  <%= form.text_field :external_model_number, id: :product_external_model_number %>
 </div>
 
 <div class="field">
-  <%= form.label 'product slug?' %>
+  <%= form.label :slug %>
+  <%= form.text_field :slug, id: :product_slug %>
 </div>
 
   <div class="actions">

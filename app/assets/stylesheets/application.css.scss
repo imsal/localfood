@@ -16,12 +16,13 @@
  */
 // custom font's
 @import "fonts";
-$aileron_light: 'Aileron-Light';
-// mixins and variables
+$aileron_light: 'Aileron-Light'; // mixins and variables
 @import "kube";
 $orange-bg: #f49b42;
-$white: #FFFFFF;
-// general text sizing
+$white: #FFFFFF; // general text sizing
+
+
+
 html {
   // set root base font-size
   //  font-size: 16px;
@@ -31,6 +32,7 @@ body {
   min-height: 100vh;
 }
 // resets
+
 body,
 html {
   // margin: 0 !important;
@@ -48,10 +50,20 @@ a:link,
 a:visited {
   text-decoration: none;
 }
-// navigation bar
-.navigation-bar {
+
+// general color styling
+
+.white-background-color{
+  background-color: $white;
+}
+
+.orange-background-color {
   background-color: $orange-bg;
 }
+
+// navigation bar
+
+
 
 .nav-logo {}
 
@@ -62,14 +74,12 @@ a:visited {
 .center-child {
   margin: auto;
 }
-//  .logo {
-//    font-family: $aileron_light;
-//    color: #FFFFFF;
-//  }
+
 .transparent-search {
   // background-color: transparent;
 }
 // landing page background
+
 .landing-page-background {
   background-image: asset_url('doughnut-bg.jpg');
   background-size: cover;
@@ -92,25 +102,21 @@ a:visited {
 }
 // Popular City Links
 
-.popular-cities{
+.popular-cities {
   -moz-column-count: 2;
   -moz-column-gap: 2.5em;
   -webkit-column-count: 2;
   -webkit-column-gap: 2.5em;
-   column-count: 2;
-   column-gap: 2.5em;
+  column-count: 2;
+  column-gap: 2.5em;
 }
-
 // flavors
-
-.image-flavor-background{
+.image-flavor-background {
   background-size: cover;
   background-position: right;
   width: 100%;
   height: 40vh;
   text-align: center;
-  // overflow: hidden;
-  // display: inline-block;
 
   span {
     display: block;
@@ -124,15 +130,56 @@ a:visited {
   }
 }
 
+#sweet {
+  background-image: asset_url('sweet.jpg');
+}
 
-  #sweet {
-    background-image: asset_url('sweet.jpg');
-  }
+#spicy {
+  background-image: asset_url('spicy.jpg');
+}
 
-  #spicy {
-    background-image: asset_url('spicy.jpg');
-  }
+#salty {
+  background-image: asset_url('salty.jpg');
+}
+// log in form
+// .form-wrapper{
+//   text-align: center;
+//   overflow: hidden;
+//   .col-4{
+//     top: 50%;
+//     transform: translateY(50%);
+//     display: block;
+//     position: relative;
+//   }
+// }
 
-  #salty {
-    background-image: asset_url('salty.jpg');
-  }
+
+// .parent-middle-div {
+//   position: relative;
+//   left: 0;
+//   top: 0;
+//   // width: 100vw;
+//   // height: 100vh;
+//   // background-color: gray;
+// }
+// .child-middle-div {
+//   padding: 5px;
+//   position: absolute;
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+//   // width: 10em;
+//   // height: 5em;
+//   // background-color: white;
+//   box-shadow: 1px 1px 10px rgba(0,0,0,.4);
+// }
+
+.form-wrapper {
+  margin-top: 15%;
+  padding: 10px;
+
+}
+
+.box-shadow {
+  box-shadow: 1px 1px 10px rgba(0,0,0,.4);
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170711210823) do
+ActiveRecord::Schema.define(version: 20170713215907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,18 @@ ActiveRecord::Schema.define(version: 20170711210823) do
     t.integer "image_file_file_size"
     t.datetime "image_file_updated_at"
     t.bigint "user_id"
+    t.string "temperature_requirements"
+    t.integer "shelf_life_in_days"
+    t.integer "max_hours_of_survival_in_transit"
+    t.integer "min_num_of_qty_per_purchase"
+    t.integer "max_num_of_qty_per_purchase"
+    t.string "packaging_requirements"
+    t.string "federal_and_state_shipping_laws"
+    t.string "frozen_cold_room_temp_or_hot"
+    t.string "flavor_tags"
+    t.string "food_type_tags"
+    t.string "external_model_number"
+    t.string "slug"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
