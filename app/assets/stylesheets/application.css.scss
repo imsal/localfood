@@ -20,17 +20,105 @@ $aileron_light: 'Aileron-Light'; // mixins and variables
 @import "kube";
 $orange-bg: #f49b42;
 $aqua-bg: #1d9ee0;
+$dark-aqua-bg: #1575A7;
 $white: #FFFFFF; // general text sizing
 
+// ~~~~~ MEDIA QUERY Variables ~~~~~~
 
+// $high-tide: 500px;
+// // set min-width/max-width if both values are numbers
+// $ex-presidents: 600px 800px;
+// // if one value is a string, assume a feature/value pair
+// $surfboard-width: max-width 1000px;
+// // string tests together within parentheses, assume each item is a feature value pair
+// $surfboard-height: (min-height 1000px) (orientation portrait);
+//
+// $phone: max-width 599px;
+
+
+// @mixin for-phone-only {
+//   @media (max-width: 599px) { @content; }
+// }
+
+/*
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-portait-only {
+  @media (min-width: 600px) and (max-width: 899px) { @content; }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-tablet-landscape-only {
+  @media (min-width: 900px) and (max-width: 1199px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-desktop-only {
+  @media (min-width: 1200px) and (max-width: 1799px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
+*/
+
+// ~~~~ MESA QUERY RULES ~~~~~
+
+// https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
+
+// Phones
+/*
+.phone-up {
+  background: purple;
+}
+
+.phone-only {
+  @include for-phone-only { background: purple; }
+}
+
+// Tablest
+.tablet-portait-only {
+  @include for-tablet-portait-only { background: purple; }
+}
+
+.tablet-portrait-up {
+  @include for-tablet-portrait-up { background: purple; }
+}
+
+.tablet-landscape-only {
+  @include for-tablet-landscape-only { background: purple; }
+}
+
+.tablet-landscape-up {
+  @include for-tablet-landscape-up { background: purple; }
+}
+
+
+// Desktops
+.desktop-only {
+  @include for-desktop-only { background: purple; }
+}
+
+.desktop-up {
+  @include for-desktop-up { background: purple; }
+}
+
+.big-desktop-up {
+  @include for-big-desktop-up { background: purple; }
+}
+*/
+//
 
 html {
   // set root base font-size
   //  font-size: 16px;
 }
 
-body {
-  min-height: 100vh;
+.content {
+  min-height: 90vh;
 }
 // resets
 
@@ -64,7 +152,7 @@ a:visited {
 
 // navigation bar
 
-
+// 1121px width
 
 .nav-logo {
   color: $white !important;
@@ -81,6 +169,11 @@ a:visited {
 .transparent-search {
   // background-color: transparent;
 }
+
+
+
+
+
 // landing page background
 
 .landing-page-background {
@@ -209,10 +302,10 @@ a:visited {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-// Footer
 
 .footer {
-  border-top: 2px solid black;
+  padding: 15px;
+  border-top: 2vh solid $dark-aqua-bg; // #1B93D1;
   background-color: $aqua-bg;
   min-height: 15vh;
   color: $white;
