@@ -1,3 +1,44 @@
-<h5>Footer</h5>
+<div class="footer">
 
-<%= render 'layouts/social-media-row' %>
+
+
+<!-- https://www.orbitmedia.com/blog/website-footer-design-best-practices/  -->
+
+<div class="row">
+
+  <div class="col col-4">
+    <h5>STAY CONNECTED</h5>
+    <%= link_to (image_tag asset_url('iconmonstr-facebook.svg')), '#', class: 'social-media-link' %>
+    <%= link_to (image_tag asset_url('iconmonstr-instagram.svg')), 'https://www.instagram.com/shipfoodto.me/', class: 'social-media-link', target: '_blank' %>
+    <%= link_to (image_tag asset_url('iconmonstr-linkedin.svg')), '#', class: 'social-media-link' %>
+    <%= link_to (image_tag asset_url('iconmonstr-pinterest.svg')), '#', class: 'social-media-link' %>
+    <%= link_to (image_tag asset_url('iconmonstr-tumblr.svg')), '#', class: 'social-media-link' %>
+    <%= link_to (image_tag asset_url('iconmonstr-twitter.svg')), '#', class: 'social-media-link' %>
+  </div>
+
+  <div class="col col-4">
+    <h5>TERMS OF USE</h5>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+
+  <div class="col col-4">
+    <h5>NAVIGATE</h5>
+    <%= link_to 'About Us', '#' %><br/>
+    <%= link_to 'Our Team', '#' %><br/>
+    <%= link_to 'Contact Us', '#' %><br/>
+    <%= link_to 'Careers', '#' %><br/>
+  </div>
+
+</div>
+
+<div class="row align-center">
+  <p>ShipFoodToMe, LLC | Anaheim, California | Main: (714) 123 - 1234 | Support: (714) 123 - 1234</p>
+</div>
+
+<div class="row align-center">
+  <p><%= link_to 'Privacy Policy', '#' %> | <%= link_to 'Site Map', '#' %> | Copyright (c) 2017 Copyright Holder All Rights Reserved.</p>
+</div>
+
+
+
+</div><!-- ./footer -->
