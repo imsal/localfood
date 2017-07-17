@@ -77,3 +77,4 @@ gem 'remotipart', github: 'mshibuya/remotipart' # admin authentication
 gem 'rails_admin', '>= 1.0.0.rc' # admin authentication
 gem 'cancancan', '~> 1.10' # restricts access on specific pages
 gem "paperclip", "~> 5.1" # ability to add images
+# gem 'compass-rails', '~> 2.0.0' # the breakpoint feature

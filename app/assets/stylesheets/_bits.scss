@@ -1,0 +1,50 @@
+/*********************
+VARIABLES
+*********************/
+
+$orange: #f49b42;
+$aqua: #1d9ee0;
+$dark-aqua: #1575A7;
+$white: #FFFFFF;
+
+/*********************
+BREAKPOINTS
+*********************/
+
+@mixin for-mobile {
+  /* Larger than mobile */
+  @media (min-width: 400px) and (max-width: 549px) { @content; }
+}
+
+@mixin for-tablet {
+  /* Larger than tablet */
+  @media (min-width: 550px) and (max-width: 999px) { @content; }
+}
+
+@mixin for-desktop {
+  /* Larger than desktop */
+  @media (min-width: 1000px) { @content; }
+}
+
+
+
+/*********************
+BREAKPOINT EXAMPLES
+*********************/
+
+/*
+.navigation-bar {
+  @include for-mobile-up { background-color: purple; }
+}
+*/
+
+
+/* Full list of includes
+
+@include for-mobile-up {}
+@include for-phablet-up {}
+@include for-tablet-up {}
+@include for-desktop-up {}
+@include for-desktop-hd-up {}
+
+*/
