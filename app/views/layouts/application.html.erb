@@ -14,28 +14,30 @@
 
 <%= render 'layouts/navigation_bar' %>
 
+<% flash.each do |message_type, message| %>
+<div class="message <%= message_type %>" data-component="message"> <p><%= message %></p> </div>
+<% end %>
 
+
+<% unless controller.controller_name == 'static_pages' && controller.action_name == 'landing_page' %>
 <div class="content">
+<% end %>
 
     <!--<p class="notice"><%#= notice %></p>
     <p class="alert"><%#= alert %></p>-->
 
-
-
-  <% flash.each do |message_type, message| %>
-  <div class="message <%= message_type %>" data-component="message"> <%= message %>  <span class="close small"></span> </div>
-  <% end %>
-
-
     <%= yield %>
 
     <br/>
+
+
     <%= debug(params) if Rails.env.development? %>
 
 
 
-
-</div>
+<% unless controller.controller_name == 'static_pages' && controller.action_name == 'landing_page' %>
+</div><!-- ./content -->
+<% end %>
 
     <%= render 'layouts/footer' %>
 

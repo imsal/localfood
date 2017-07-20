@@ -1,32 +1,40 @@
 <h1>Store</h1>
 
-<div class="row">
-<% @products.each do |product|  %>
-<div class="col col-4">
+<div class="container">
 
-<div class="card">
+  <% @products.each_with_index do |product, index|  %>
+  <% if index % 3 == 0 %>
+  <div class="row">
+    <% end %>
+
+    <div class="four columns">
+
+      <div class="card">
+        <%= image_tag product.image_file.url(:medium) %>
+
+        <div class="card-content">
+          <h5><%= product.name %></h5>
+          <p>by <em><%= product.user.business_name %></em></p>
+          <p><%= product.description %></p>
+          <p><%= number_to_currency(product.retail_price) %></p>
+          <%= button_to 'Add to Cart', line_items_path(product_id: product.id), class: 'btn btn-primary' %>
+          <!-- ,
+                remote: true  ///// Note: remote: true caused double SQL entries to be created while cart is empty. -->
+        </div>
 
 
-  <%= image_tag(product.image_file.url(:medium)) %>
-  <div class="container">
-  <%= product.name %> by <%= product.user.business_name %>
-  <%= product.description %>
-  <%= number_to_currency(product.retail_price) %>
-  <%= button_to 'Add to Cart', line_items_path(product_id: product.id), class: 'btn btn-primary' %> <!-- ,
-            remote: true  ///// Note: remote: true caused double SQL entries to be created while cart is empty. -->
+      </div>
 
-</div><!-- ./container -->
-</div><!-- ./card -->
+    </div>
 
-</div><!-- ./col -->
-<% end %>
-</div><!-- ./row -->
+    <% if index % 3 == 2 || @products.last == product %>
 
-<!--
-<div class="card">
-  <img src="img_avatar2.png" alt="Avatar" style="width:100%">
-  <div class="container">
-    <h4><b>Jane Doe</b></h4>
-    <p>Interior Designer</p>
   </div>
-</div> -->
+  <!-- <br/> -->
+  <hr/>
+
+  <% end %>
+
+  <% end %>
+
+</div>

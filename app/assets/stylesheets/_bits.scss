@@ -8,6 +8,21 @@ $dark-aqua: #1575A7;
 $white: #FFFFFF;
 
 /*********************
+Fonts
+*********************/
+
+// https://gist.github.com/tagrudev/4276467
+$aileron_light: 'Aileron-Light';
+
+@font-face{
+    font-family: 'Aileron-Light';
+    src: font-url("Aileron-Light.otf") unquote("format('opentype')");
+    font-weight: lighter;
+    font-style: normal;
+}
+
+
+/*********************
 BREAKPOINTS
 *********************/
 
@@ -34,17 +49,16 @@ BREAKPOINT EXAMPLES
 
 /*
 .navigation-bar {
-  @include for-mobile-up { background-color: purple; }
+  @include for-mobile { background-color: purple; }
 }
 */
 
 
 /* Full list of includes
 
-@include for-mobile-up {}
-@include for-phablet-up {}
-@include for-tablet-up {}
-@include for-desktop-up {}
-@include for-desktop-hd-up {}
+@include for-mobile {}
+@include for-tablet {}
+@include for-desktop {}
+
 
 */

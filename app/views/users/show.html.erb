@@ -1,9 +1,10 @@
-<h1>Profile</h1>
+<h1><%= @user.business_name %></h1>
+<%= link_to 'Edit Profile', edit_user_registration_path, class: 'button' %><br/>
 
 <strong>Email:</strong> <%= @user.email %><br/>
 
 <% if current_user.business_role? %>
-<strong>Business Name:</strong> <%= @user.business_name %><br/>
+<!--<strong>Business Name:</strong> <%= @user.business_name %><br/> -->
 <strong>Food Category:</strong> <%= @user.food_category %><br/>
 <% end %>
 
@@ -18,31 +19,28 @@
 
 <!-- links based on role -->
 <% if current_user.business_role? %>
-<%= link_to 'View My Products', products_path %>
-<%= link_to 'Outstanding Orders', '#' %>
-<%= link_to 'Payment Ledger', '#' %>
+<%= link_to 'View My Products', products_path, class: 'button' %>
+<%= link_to 'Outstanding Orders', '#', class: 'button' %>
+<%= link_to 'Payment Ledger', '#', class: 'button' %>
 <% end %>
 
 <% if current_user.admin_role? %>
-<%= link_to 'Admin Dashboard', '#' %>
-<%= link_to 'Add Products', new_product_path %>
-<%= link_to 'List All Products', products_path %>
-<%= link_to 'List User Accounts', '#' %>
-<%= link_to 'Unpaid Invoices', '#' %>
-<%= link_to 'Payment Ledgers', '#' %>
+<%= link_to 'Admin Dashboard', '#', class: 'button' %>
+<%= link_to 'Add Products', new_product_path, class: 'button' %>
+<%= link_to 'List All Products', products_path, class: 'button' %>
+<%= link_to 'List User Accounts', '#', class: 'button' %>
+<%= link_to 'Unpaid Invoices', '#', class: 'button' %>
+<%= link_to 'Payment Ledgers', '#', class: 'button' %>
 <% end %>
 
 <% if current_user.customer_role? %>
-<%= link_to 'Order History', '#' %>
-<%= link_to 'Track Shipments', '#' %>
-<%= link_to 'Delete My Account', '#', class: 'btn btn-danger' %>
-<%= link_to 'Change Subscription Frequency', '#', class: 'btn btn-default' %>
+<%= link_to 'Order History', '#', class: 'button' %>
+<%= link_to 'Track Shipments', '#', class: 'button' %>
+<%= link_to 'Delete My Account', '#', class: 'button' %>
+<%= link_to 'Change Subscription Frequency', '#', class: 'button' %>
 <% end %>
 
 
 <!-- General Links -->
-<%= link_to 'Edit Profile', edit_user_registration_path, class: 'btn btn-primary' %>
 
-<%= link_to destroy_user_session_path, method: :delete do %>
-<button class="button secondary">Log out</button>
-<% end %>
+<%= link_to 'log out' ,destroy_user_session_path, method: :delete, class: 'button'%>

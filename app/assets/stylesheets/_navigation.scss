@@ -1,0 +1,85 @@
+@import "_bits";
+/*********************
+Navigation Bar / Header
+*********************/
+
+ul.navigation-bar {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  background-color: $orange;
+  width: 100%;
+  margin-bottom: 0;
+
+  @include for-desktop {
+    // position: fixed;
+    z-index: 500;
+    top: -2rem;
+  }
+
+  li.navigation-header {
+    @include for-mobile {
+      text-align: center;
+      font-size: 2.1em;
+    }
+    @include for-tablet {
+      text-align: center;
+      font-size: 2.1em;
+    }
+    @include for-desktop {
+      float: left;
+      margin: 0 2rem;
+    }
+
+    .nav-logo {
+      font-size: 2em;
+      font-family: $aileron_light;
+    }
+  }
+
+  li.navigation-search {
+    @include for-tablet {
+      float: left;
+    }
+    @include for-desktop {
+      float: right;
+    }
+
+    .search-bar {
+      @include for-mobile {
+        width: 100%;
+      }
+      @include for-tablet {
+        width: 110%;
+      }
+      @include for-desktop {
+      width: 18em;
+      }
+    }
+  }
+
+  li.navigation-button {
+    float: right;
+  }
+
+  li {
+    @include for-mobile {
+      margin: 1rem;
+
+    }
+    @include for-tablet {
+      margin: 1rem
+    }
+    @include for-desktop {
+    margin: 2rem;
+    }
+    a {
+
+      @include for-desktop {
+        display: inline;
+      }
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
