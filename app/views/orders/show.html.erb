@@ -1,0 +1,63 @@
+<!-- <p id="notice"><%= notice %></p> -->
+
+<h1>Order Confirmation</h1>
+
+<p>
+  <strong>Order Refference Number:</strong>
+  Change Later
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @order.first_name %> <%= @order.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @order.email %>
+</p>
+
+<p>
+  <strong>Pay type:</strong>
+  <%= @order.pay_type %>
+</p>
+
+<p>
+  <strong>Shipping address:</strong>
+  <%= @order.street_address %><br/>
+  <% unless @order.suite.blank? %><%= @order.suite %><br/><% end %>
+  <%= @order.city %><%= @order.state %><%= @order.zip_code %><br/>
+
+</p>
+
+
+
+<% @order.line_items.each do |item| %>
+<%= item.quantity %>
+<%= item.product.name %>
+<%= number_to_currency(item.product.retail_price) %><br/>
+<% end %>
+
+<br/>
+
+<p><strong>
+  Shipping
+</strong></p>
+
+<p><strong>
+  Taxes
+</strong></p>
+
+<p><strong>
+  Coupon / Promo Code
+</strong></p>
+
+<p>
+  <strong>Final Total:</strong>
+  <%= number_to_currency(@order.final_total) %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

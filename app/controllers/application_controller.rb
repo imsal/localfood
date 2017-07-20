@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   # before_action :initialize_shopping_cart
 
-  before_action :set_cart
+  before_action :set_shopping_cart
 
   # include SessionsHelper
   include CurrentCart

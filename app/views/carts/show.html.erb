@@ -53,10 +53,11 @@
 
 
 <!-- Checkout Button -->
-<%= link_to 'Checkout', new_charge_path, class: 'btn btn-default' %>
+
+<%#= button_to 'Checkout', new_charge_path %>
 
 <% unless controller.controller_name == 'orders' %>
-<%#= button_to 'Checkout', new_order_path, method: :get %>
+<%= button_to 'Checkout', new_order_path, method: :get %>
 
 
 <%= button_to 'Empty cart', @cart, method: :delete,
